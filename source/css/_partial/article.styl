@@ -1,0 +1,513 @@
+.article-row
+    clearfix()
+    width: 100%
+    float: left
+    position: relative
+    padding: 30px 0px 0px 30px
+    border-bottom: 1px solid #eee
+    box-sizing: border-box
+.article-summary
+    width: 100%
+    float: left
+    margin-bottom: 2em
+    box-shadow: block-shadow
+    .article-summary-inner
+        position: relative
+        .thumbnail
+            height: 0
+            width: 100%
+            display: block
+            overflow: hidden
+            position: relative
+            padding-bottom: 35%
+            border-bottom: 1px solid color-border-light
+            .comment-counter
+                right: 0
+                top: 15px
+                color: white
+                font-size: 12px
+                padding: 2px 7px
+                line-height: 19px
+                position: absolute
+                display: inline-block
+                background-color: color-sub
+                &:before
+                    top: 3px
+                    left: -16px
+                    content: ''
+                    position: absolute
+                    display: inline-block
+                    border: 9px solid transparent
+                    border-right-color: color-sub
+            .thumbnail-image
+                display: block
+                position: absolute
+                width: 100%
+                height: 100%
+                opacity: 1
+                background-size: cover
+                background-position: center
+                transition: opacity 0.3s ease-in
+                background-image: url(thumbnail-default)
+            .thumbnail-none
+                width: 100%
+                height: 100%
+                background-size: 100% 100%
+                background-image: url(thumbnail-default)
+         .meta-block
+            right: 0
+            top: 15px
+            color: white
+            font-size: 12px
+            padding: 2px 7px
+            line-height: 19px
+            position: absolute
+            display: inline-block
+            background-color: color-sub
+            &:before
+                top: 3px
+                left: -16px
+                content: ''
+                position: absolute
+                display: inline-block
+                border: 9px solid transparent
+                border-right-color: color-sub
+        .article-title
+            font-size: 24px
+            font-weight: 400
+            line-height: 1.5em
+            word-wrap: no-wrap
+            overflow: hidden
+            text-overflow: ellipsis
+            margin: 10px 30px 10px
+            padding-right: 70px
+            text-align: center
+            a
+                transition: color 0.3s ease-in
+                color: #444
+                text-decoration: none
+        .article-excerpt
+            position: relative
+            color: rgb(170, 170, 170)
+            font-size: 16px
+            line-height: line-height
+            overflow: hidden
+            margin: 0px 30px 20px
+    &:hover
+        .thumbnail
+            background: #000;
+            .thumbnail-image
+                opacity: 0.9
+                animation: 5s thumbnail-scroll
+        .article-title
+            a
+                color: color-theme
+
+.article-inner
+    overflow: hidden
+    line-height: 1.6em
+    .article-count 
+        line-height: 1.5em;
+
+.article-meta
+    clearfix()
+    height: 3em
+    overflow: hidden
+    border-top: 1px solid #f0f0f0
+    p
+        float: left
+        color: #bbb
+    .category
+        text-transform: uppercase
+        a, i
+            margin-right: 6px
+
+.article-single
+    --padding: 30px 30px 20px
+    box-shadow: block-shadow
+    .article-header
+        margin: 0 article-padding
+    .article-subtitle
+        padding: 20px 0
+        border-bottom: 1px solid color-border-light
+        height: line-height * 2
+
+.article-thumbnail
+    width: 100%;
+    height: 400px;
+    display: block;
+    background-size: cover;
+    background-position: center center;
+    &:hover
+        opacity: 0.9
+        animation: 5s thumbnail-scroll
+
+.article-author-avatar
+    float: left
+    img
+        border-radius: 50%
+.article-count
+    float: left
+    margin-left: 15px
+    height: 48px;
+    line-height: 48px
+    font-size: .9em
+    color: color-light
+    .article-author
+        color: color-default
+        font-size: 1.5em
+        text-transform: capitalize
+    a.article-date
+        color: color-default
+        margin-right: 8px
+    i
+        margin-right: 8px
+
+
+.article-dir
+    float: right
+    height: 3em;
+    line-height: 3em
+    i
+        margin-right: 8px
+        
+.article-category
+    display: inline-block
+    color: color-default
+    text-shadow: 0 1px #fff
+    margin-left: 8px
+    @extend $block-caption
+
+.article-category-link
+    color: color-theme
+    text-decoration: none
+
+.article-title
+    text-decoration: none
+    font-size: 36px
+    letter-spacing: -1px
+    color: color-default
+    line-height: line-height-title
+    transition: color 0.2s
+    margin: 20px 0 0px;
+    a&:hover
+        color: color-theme
+
+.article-date,
+.article-tag-list
+    @extend $block-caption
+
+.article-tag-list
+    clearfix()
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px
+    line-height: 3em
+    &:before
+        float: left
+        content: '\f02b'
+        margin-right: 8px
+        font-family: FontAwesome
+
+.article-tag-list-item
+    float: left
+    margin-right: 10px
+
+.article-tag-list-link
+    color: color-theme
+    text-decoration: none
+    &:before
+        content: '#'
+
+.article-entry
+    @extend $base-style
+    clearfix()
+    color: color-default
+    font-size: font-size-article
+    font-weight: 300
+    line-height: line-height
+    & > *
+        padding: 0 article-padding
+    p, table
+        margin: line-height 0
+    h1, h2, h3, h4, h5, h6
+        line-height: line-height-title
+        margin: line-height-title 0
+        border-left: 5px solid color-default
+        font-weight: 400
+        background: #fff
+    a
+        color: color-theme
+        font-weight: bold
+        &:hover
+            text-decoration: underline
+    ul, ol, dl
+        margin-top: line-height
+        margin-bottom: line-height
+    ol
+        list-style-position: outside
+        margin-left: 20px
+
+    img, video
+        max-width: 100%
+        height: auto
+        display: block
+        margin: auto
+    img
+        &:hover
+            transform: scale(1.2)
+        transition: transform 1s
+    iframe
+        border: none
+    table
+        width: "calc(100% - %s)" % (article-padding * 2)
+        margin: auto
+        border-collapse: collapse
+        border-spacing: 0
+    th
+        font-weight: 600
+        border-bottom: 2px solid color-border
+        padding-bottom: 0.5em
+    td
+        border-bottom: 1px solid color-border
+        padding: 10px 0
+    blockquote
+        color: #777
+        quote: none
+        margin: 0 0 20px 0
+        position: relative
+        border-left: 4px solid color-theme
+        font-weight: 900
+        background-color: color-quoteblock-background
+
+        footer
+            font-size: font-size
+            margin: line-height 0
+            font-family: font-sans
+            cite
+                &:before
+                    content: "—"
+                    padding: 0 0.5em
+    .highlight
+        padding: 30px 40px
+        border-left: 4px solid color-theme
+        background: rgba(20, 24, 32, .8)
+
+    .pullquote
+        text-align: left
+        width: 45%
+        margin: 0
+        &.left
+            margin-left: 0.5em
+            margin-right: 1em
+        &.right
+            margin-right: 0.5em
+            margin-left: 1em
+    .caption
+        color: color-grey
+        display: block
+        font-size: 0.9em
+        margin-top: 0.5em
+        position: relative
+        text-align: center
+    // http://webdesignerwall.com/tutorials/css-elastic-videos
+    .video-container
+        position: relative
+        padding-top: (9 / 16 * 100)% // 16:9 ratio
+        height: 0
+        overflow: hidden
+        iframe, object, embed
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            margin-top: 0
+
+.article-more-link a
+    display: inline-block
+    line-height: 1em
+    padding: 6px 15px
+    border-radius: 15px
+    background: color-background
+    color: color-grey
+    text-shadow: 0 1px #fff
+    text-decoration: none
+    &:hover
+        background: color-theme
+        color: #fff
+        text-decoration: none
+        text-shadow: 0 1px darken(color-theme, 20%)
+
+.article-footer
+    clearfix()
+    font-size: font-size
+    color: color-default
+    line-height: line-height
+    border-top: 1px solid color-border
+    padding: line-height article-padding
+    a
+        color: color-grey
+        text-decoration: none
+        &:hover
+            color: color-default
+
+.article-comment-link,
+.article-share-link
+    i
+        padding-right: 8px
+
+.article-comment-link
+    float: right
+
+.article-share-link
+    cursor: pointer
+    float: right
+    margin-left: 20px
+
+.article-share-box
+    position: absolute
+    display: none
+    background: #fff
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2)
+    border-radius: 3px
+    margin-left: -145px
+    overflow: hidden
+    z-index: 1
+    &.on
+        display: block
+
+.article-share-input
+    width: 100%
+    background: none
+    box-sizing: border-box
+    font: 14px font-sans
+    padding: 0 15px
+    color: color-default
+    outline: none
+    border: 1px solid color-border
+    border-radius: 3px 3px 0 0
+    height: 36px
+    line-height: 36px
+
+.article-share-links
+    clearfix()
+    background: color-background
+
+$article-share-link
+    width: 50px
+    height: 36px
+    display: block
+    float: left
+    position: relative
+    color: #999
+    text-align: center
+    line-height: 36px
+    text-decoration: none
+    &:before
+        font-size: 20px
+        font-family: FontAwesome
+        absolute-center(@font-size)
+    &:hover
+        color: #fff
+
+.article-share-twitter
+    @extend $article-share-link
+    &:before
+        content: "\f099"
+    &:hover
+        background: color-twitter
+        text-shadow: 0 1px darken(color-twitter, 20%)
+
+.article-share-facebook
+    @extend $article-share-link
+    &:before
+        content: "\f09a"
+    &:hover
+        background: color-facebook
+        text-shadow: 0 1px darken(color-facebook, 20%)
+
+.article-share-pinterest
+    @extend $article-share-link
+    &:before
+        content: "\f0d2"
+    &:hover
+        background: color-pinterest
+        text-shadow: 0 1px darken(color-pinterest, 20%)
+
+.article-share-google
+    @extend $article-share-link
+    &:before
+        content: "\f0d5"
+    &:hover
+        background: color-google
+        text-shadow: 0 1px darken(color-google, 20%)
+
+.article-gallery
+    background: #000
+    position: relative
+
+.article-gallery-photos
+    position: relative
+    overflow: hidden
+
+.article-gallery-img
+    display: none
+    max-width: 100%
+    &:first-child
+        display: block
+    &.loaded
+        position: absolute
+        display: block
+    img
+        display: block
+        max-width: 100%
+        margin: 0 auto
+
+.article-gallery
+    overflow: hidden
+    background: black
+    position: relative
+    text-align: center
+    margin: line-height 0
+    .gallery-item
+        display: none
+        max-width: 100%
+        &:before,
+        &:after
+            top: 50%
+            width: 40px
+            height: 36px
+            font-size: 36px
+            line-height: 36px
+            margin-top: -18px
+            position: absolute
+            font-family: FontAwesome
+            color: rgba(255, 255, 255, .5)
+        &:hover
+            &:before,
+            &:after
+                color: rgba(255, 255, 255, .8)
+        &:before
+            left: 0
+            content: "\f104"
+        &:after
+            right: 0
+            content: "\f105"
+        &:first-child
+            display: block
+        img
+            display: block
+            max-width: 100%
+            margin: 0 auto
+
+/* lightgallery */
+.lg-outer
+    .lg-thumb-item
+        border-radius: 0 !important
+
+@keyframes thumbnail-scroll {
+  0% { background-position: 0 0;}
+  80% {background-position: 100% 100%;}
+  100% {background-position: center}
+}

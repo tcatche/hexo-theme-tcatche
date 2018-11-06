@@ -1,0 +1,31 @@
+<% if (typeof(script) !== 'undefined' && script) { %>
+  <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "<%= theme.comment.gentie_productKey %>",
+        target: "cloud-tie-wrapper"
+      };
+      var yunManualLoad = true;
+      
+      var commentScript = document.createElement('script');
+      commentScript.type = 'text/javascript';
+      commentScript.async = true;
+      commentScript.src = 'https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js';
+      document.getElementsByTagName('head')[0].appendChild(commentScript);
+      
+      var lazyLoadComment = function() {
+        setTimeout(function() {
+          if (!window.Tie) {
+            lazyLoadComment();
+          } else {
+            Tie.loader("<%= theme.comment.gentie_loader %>", true);
+          }
+        }, 100)
+      }
+      lazyLoadComment();
+  </script>
+<% } else { %>
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<% } %>
+

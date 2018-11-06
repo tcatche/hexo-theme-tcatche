@@ -1,0 +1,25 @@
+<article class="article article-summary">
+    <div class="article-summary-inner">
+        <% if (theme.customize.thumbnail === true) { %>
+            <%- partial('common/thumbnail', { counter: false }) %>
+        <% } %>
+        <span class="meta-block">
+            <i class="icon fa fa-calendar"></i>
+            <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, null) %></time>
+        </span>
+        <%- partial('post/title', { class_name: 'article-title', linkable: true }) %>
+        <p class="article-excerpt">
+            <%- excerpt(post) %>…
+        </p>
+        <div class="article-meta">
+            <div class="article-count">
+                <%- partial('post/date', { class_name: 'article-date hide', date_format: null }) %>
+                <%- partial('post/wordcount') %>
+            </div>
+            <div class="article-dir hide">
+                <%- partial('post/category') %>
+                <%- partial('post/tag') %>
+            </div>
+        </div>
+    </div>
+</article>

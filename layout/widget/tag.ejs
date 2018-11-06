@@ -1,0 +1,11 @@
+<% if (site.tags.length) { %>
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">
+            <%= __('sidebar.tags') %>
+            <i class="fa fa-angle-double-down" aria-hidden="true"></i>    
+        </h3>
+        <div class="widget">
+            <%- list_tags() %>
+        </div>
+    </div>
+<% } %>

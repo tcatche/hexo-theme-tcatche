@@ -1,0 +1,11 @@
+<% if (site.tags.length) { %>
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">
+            <%= __('sidebar.tag_cloud') %>
+            <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+        </h3>
+        <div class="widget tagcloud">
+            <%- tagcloud() %>
+        </div>
+    </div>
+<% } %>

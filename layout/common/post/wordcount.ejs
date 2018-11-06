@@ -1,0 +1,10 @@
+<% if (post.content && wordcount) { %>
+    <span class="word-count">
+      <i class="icon fa fa-file-text"></i>
+      <%= __("article.word_nums") + ': ' + wordcount(post.content) %> 
+    </span>
+    <span class="word-count">
+      <i class="icon fa fa-clock-o"></i>
+      <%= __("article.read_times") + ': ' + min2read(post.content, {cn: 300, en: 160}) + 'mins' %> 
+    </span>
+<% } %>
