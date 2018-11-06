@@ -123,8 +123,7 @@
             margin-right: 6px
 
 .article-single
-    --padding: 30px 30px 20px
-    box-shadow: block-shadow
+    padding: 30px 30px 20px
     .article-header
         margin: 0 article-padding
     .article-subtitle
@@ -238,8 +237,8 @@
         background: #fff
     a
         color: color-theme
-        font-weight: bold
         &:hover
+            font-weight: bold
             text-decoration: underline
     ul, ol, dl
         margin-top: line-height
@@ -289,9 +288,17 @@
                     content: "—"
                     padding: 0 0.5em
     .highlight
-        padding: 30px 40px
         border-left: 4px solid color-theme
         background: rgba(20, 24, 32, .8)
+        pre
+            counter-reset: code-line-num;
+            .line::before
+                display: inline-block;
+                width: 2em;
+                padding-right: 2em;
+                text-align: right;
+                content: counter(code-line-num);
+                counter-increment: code-line-num; 
 
     .pullquote
         text-align: left
