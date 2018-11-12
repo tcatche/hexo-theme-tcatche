@@ -126,15 +126,27 @@
         }
     });
 
-    $(document).on('scroll', function(e){
-        var h = $(document).height() - window.innerHeight
-        var top = $(document).scrollTop(); 
+    function listenScroll() {
+        var top = $('#root').scrollTop();
+        var h = $(document).height() - window.innerHeight;
+        var firstScreenHeight = $('#header-outer').height();
         if (top < 10) {
-            $('#page-percent').hide();
+            $('#page-percent').fadeOut();
         } else {
-            $('#page-percent').show();
+            $('#page-percent').fadeIn();
         }
         var p = (parseInt(top * 100 / h)) + '%';
         $('#page-percent div').css('width', p);
-    })
+        // 更新 nav 和 fixed
+        if (top >= firstScreenHeight - 40) {
+            $('#fixed').fadeIn();
+            $('#header-nav').addClass('nav-fixed');
+        } else {
+            $('#fixed').fadeOut();
+            $('#header-nav').removeClass('nav-fixed');
+        }
+    }
+
+    listenScroll();
+    $('#root').on('scroll', listenScroll);
 })(jQuery);

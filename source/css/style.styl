@@ -26,7 +26,14 @@ body
     background: color-background
     font: font-size font-sans
     -webkit-text-size-adjust: 100%
+    font-weight: light;
 
+#root
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    position: relative;
+    
 code
     margin: 0 2px
     color: color-sub
@@ -40,7 +47,7 @@ code
 
 .container
     position: relative
-    -padding: 0 container-padding
+    padding: container-padding 0 
 
 .container-inner
     clearfix()
@@ -78,16 +85,10 @@ code
     clearfix()
     position: relative
     box-sizing: border-box
-    if sidebar is right
-        padding-right: sidebar-width
-    else
-        padding-left: sidebar-width
+    max-width: container-inner-max-width
+    margin: auto;
 
 #main
-    if sidebar is right
-        float: left
-    else
-        float: right
     width: 100%
     box-sizing: border-box
     min-height: 600px

@@ -1,5 +1,5 @@
 // Insight Search Styles
-ins-container-width = 540px
+ins-container-width = 840px
 ins-text-grey = #9a9a9a
 ins-border-grey = #e2e2e2
 ins-background-grey = #f7f7f7
@@ -71,7 +71,7 @@ $ins-full-screen
     box-sizing: border-box
     width: ins-container-width
     margin-left: -(ins-container-width/2)
-    @media screen and (max-width: 559px), screen and (max-height: 479px)
+    @media screen and (max-width: 900px), screen and (max-height: 479px)
         top: 0
         left: 0
         margin: 0
@@ -86,10 +86,10 @@ $ins-full-screen
     bottom: 0
     overflow-y: auto
     position: absolute
+    background: ins-background-grey
 
 .ins-section-container
     position: relative
-    background: ins-background-grey
 
 .ins-section
     font-size: 14px
@@ -128,3 +128,6 @@ $ins-full-screen
             .ins-slug,
             .ins-search-preview
                 color: white
+    .ins-type-tag
+        display: inline-block;
+        min-width: 120px;;
