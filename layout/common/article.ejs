@@ -1,9 +1,6 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-single article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+<%- partial('post/title', { class_name: 'article-title' }) %>
     <div class="article-inner">
-        <% var thumbnailUrl = thumbnail(post) %>
-        <% if (thumbnailUrl) { %>
-            <span style="background-image:url(<%- url_for(thumbnailUrl) %>)" alt="<%= post.title %>" class="article-thumbnail"></span>
-        <% } %>
         <header class="article-header" >
             <div class="article-subtitle">
                 <div class="article-author-avatar">
@@ -21,7 +18,6 @@
                     <%- partial('post/tag') %>
                 </div>
             </div>
-            <%- partial('post/title', { class_name: 'article-title' }) %>
         </header>
         <%- partial('post/gallery') %>
         <div class="article-entry" itemprop="articleBody">
