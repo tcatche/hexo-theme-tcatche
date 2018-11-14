@@ -128,7 +128,7 @@
 
     function listenScroll() {
         var top = $('#root').scrollTop();
-        var h = $(document).height() - window.innerHeight;
+        var h = $('#wrap').height() - window.innerHeight;
         var firstScreenHeight = $('#header-outer').height();
         if (top < 10) {
             $('#page-percent').fadeOut();

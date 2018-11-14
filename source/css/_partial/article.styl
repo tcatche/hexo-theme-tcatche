@@ -103,59 +103,73 @@
             a
                 color: color-theme
 
+.article-header
+    margin-top: article-padding;
+    border-top: 1px solid color-border-light
+    border-bottom: 1px solid color-border-light
+    height: 80px;
+    padding: 20px 0
+    .article-author-avatar
+        float: left
+        img
+            border-radius: 50%
+            width: 80px;
+            height: 80px;
+    .article-subtitle
+        height: 80px;
+        margin-left: 96px;
+.article-meta > *
+    margin-right: 10px;
+.article-author
+    color: color-default
+    font-size: 1.5em
+    text-transform: capitalize
+    margin-bottom: 10px;
+
+.article-dir
+    i
+        margin-right: 8px
+    .article-category
+        display: inline-block
+        color: color-default
+        text-shadow: 0 1px #fff
+        @extend $block-caption
+    .article-tag-list
+        clearfix()
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 10px
+        &:before
+            float: left
+            content: '\f02b'
+            margin-right: 8px
+            font-family: FontAwesome
+        .article-tag-list-item
+            float: left
+            margin-right: 10px
+
+        .article-tag-list-link
+            color: color-theme
+            text-decoration: none
+            &:before
+                content: '#'
+
 .article-inner
     overflow: hidden
     line-height: 1.6em
     .article-count 
         line-height: 1.5em;
 
-.article-meta
-    clearfix()
-    height: 3em
-    overflow: hidden
-    border-top: 1px solid #f0f0f0
-    padding: 0 30px;
-    p
-        float: left
-        color: #bbb
-    .category
-        text-transform: uppercase
-        a, i
-            margin-right: 6px
 
 .article-single
     padding: 30px 30px 20px
-    .article-header
-        margin: article-padding 0
-    .article-subtitle
-        padding: 20px 0
-        border-top: 1px solid color-border-light
-        height: line-height * 2
 
-.article-thumbnail
-    width: 100%;
-    height: 400px;
-    display: block;
-    background-size: cover;
-    background-position: center center;
-    &:hover
-        opacity: 0.9
-        animation: 5s thumbnail-scroll
-
-.article-author-avatar
-    float: left
-    img
-        border-radius: 50%
 .article-count
     float: left
     height: 48px;
     line-height: 48px
     font-size: .9em
     color: color-light
-    .article-author
-        color: color-default
-        font-size: 1.5em
-        text-transform: capitalize
     .word-count
         margin-right: 20px;
     a.article-date
@@ -165,19 +179,6 @@
         margin-right: 8px
 
 
-.article-dir
-    float: right
-    height: 3em;
-    line-height: 3em
-    i
-        margin-right: 8px
-        
-.article-category
-    display: inline-block
-    color: color-default
-    text-shadow: 0 1px #fff
-    margin-left: 8px
-    @extend $block-caption
 
 .article-category-link
     color: color-theme
@@ -198,27 +199,6 @@
 .article-tag-list
     @extend $block-caption
 
-.article-tag-list
-    clearfix()
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 20px
-    line-height: 3em
-    &:before
-        float: left
-        content: '\f02b'
-        margin-right: 8px
-        font-family: FontAwesome
-
-.article-tag-list-item
-    float: left
-    margin-right: 10px
-
-.article-tag-list-link
-    color: color-theme
-    text-decoration: none
-    &:before
-        content: '#'
 
 .article-entry
     @extend $base-style

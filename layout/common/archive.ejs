@@ -19,4 +19,8 @@
   <nav id="page-nav">
     <%- paginator({prev_text: '&laquo;', next_text: '&raquo;'}) %>
   </nav>
+<% } else { %>
+  <nav id="page-nav">
+  没有更多的内容了
+  </nav>
 <% } %>

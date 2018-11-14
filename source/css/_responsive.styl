@@ -27,74 +27,6 @@
                     width: 100px
     .main-body
         margin-top: 0
-    .main-body-inner
-        if sidebar is right
-            padding-right: sidebar-toggle-width
-            background-position: -340px 0 !important
-        else
-            padding-left: sidebar-toggle-width
-            background-position: -290px 0 !important
-        #sidebar
-            clearfix()
-            if sidebar is right
-                right: 0
-            else
-                left: 0
-            background: #f6f6f6
-            margin: 0
-            height: 100%
-            position: absolute
-            overflow: hidden
-            width: sidebar-toggle-width
-            transition: width 0.2s ease-in 0.2s
-            .sidebar-toggle
-                display: block
-                padding: 6px
-                color: rgba(255,255,255,0.7)
-                text-align: center
-                height: sidebar-toggle-width
-                background: color-theme
-                box-sizing: border-box
-                .toggle
-                    line-height: 38px
-                    font-size: 38px
-                    width: 38px
-                    font-family: fontawesome
-                    &:before
-                        if sidebar is right
-                            content: '\f100'
-                        else
-                            content: '\f101'
-            .sidebar-top
-                padding: 10px 30px
-                background: none
-                border-bottom: 1px solid color-border
-                p, a, i
-                    color: #666
-            #article-nav, .widgets-container, .sidebar-top
-                opacity: 0
-                transition: opacity 0.2s ease-in
-            &.expend
-                width: sidebar-width
-                overflow-y: auto
-                z-index: 2
-                box-shadow: -1px 0px 1px 1px rgba(0,0,0,.15)
-                transition: width 0.2s ease-in
-                .toggle
-                    &:before
-                        content: '\f100'
-                #article-nav, .widgets-container, .sidebar-top
-                    opacity: 1
-                    transition: opacity 0.2s ease-in 0.2s
-                .widget-wrap
-                    background: #fff
-                .sidebar-top
-                    display: block
-                    .social-links
-                        .social-tooltip
-                            &:after,
-                            &:before
-                                display: none
 
     #main
         .main-body-header,
@@ -160,16 +92,8 @@
                             padding-left: 30px
                 a
                     border-bottom: 1px solid rgba(255,255,255,0.06)
-            #sub-nav
-                float: none
-                .search-form
-                    &:before
-                        font-size: font-size
-                .search-form-input
-                    font-size: font-size
-                    width: 90%
     .main-body-inner
-        padding: 0px
+        padding: 10px
         background: none
     #main
         float: none
@@ -190,16 +114,6 @@
         width: 100%
         .article-summary-inner
             margin: 15px 15px 15px 0
-    #sidebar
-        float: none
-        margin: 0px
-        width: 100%
-        background: color-sidebar-background
-        .sidebar-top,
-        .widget-wrap
-            padding: 15px
-        .widgets-container
-            padding-bottom: 15px
     #footer
         margin-top: 0px
         #back-to-top

@@ -1,24 +1,24 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-single article-type-<%= post.layout %>" itemscope itemprop="blogPost">
-<%- partial('post/title', { class_name: 'article-title' }) %>
-    <div class="article-inner">
-        <header class="article-header" >
-            <div class="article-subtitle">
-                <div class="article-author-avatar">
-                    <img src="<%=  url_for(theme.customize.avatar || '/images/avatar-default.png') %>" alt="Author's avatar" height="44px" width="44px">
-                </div>
-                <div class="article-count">
-                    <div class="article-author">
-                        <%= config.author %>
-                    </div>
-                    <%- partial('post/date', { class_name: 'article-date', date_format: null }) %>
-                    <%- partial('post/wordcount') %>
-                </div>
-                <div class="article-dir">
-                    <%- partial('post/category') %>
-                    <%- partial('post/tag') %>
-                </div>
+    <%- partial('post/title', { class_name: 'article-title' }) %>
+    <header class="article-header" >
+        <div class="article-author-avatar">
+            <img src="<%=  url_for(theme.customize.avatar || '/images/avatar-default.png') %>" alt="Author's avatar">
+        </div>
+        <div class="article-subtitle">
+            <div class="article-author">
+                <%= config.author %>
             </div>
-        </header>
+            <div class="article-meta">
+                <%- partial('post/date', { class_name: 'article-date', date_format: null }) %>
+                <%- partial('post/wordcount') %>
+            </div>
+            <div class="article-dir">
+                <%- partial('post/category') %>
+                <%- partial('post/tag') %>
+            </div>
+        </div>
+    </header>
+    <div class="article-inner">
         <%- partial('post/gallery') %>
         <div class="article-entry" itemprop="articleBody">
             <%- post.content %>
