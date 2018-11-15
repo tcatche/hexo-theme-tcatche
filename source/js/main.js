@@ -1,14 +1,4 @@
 (function ($) {
-    // To top button
-    $("#back-to-top").on('click', function () {
-        $('body, html').animate({ scrollTop: 0 }, 600);
-    });
-
-    // Nav bar toggle
-    $('#main-nav-toggle').on('click', function () {
-        $('.nav-container-inner').slideToggle();
-    });
-
     // Caption
     $('.article-entry').each(function(i) {
         $(this).find('img').each(function() {
@@ -138,9 +128,11 @@
         var p = (parseInt(top * 100 / h)) + '%';
         $('#page-percent div').css('width', p);
         // 更新 nav 和 fixed
-        if (top >= firstScreenHeight - 40) {
+        if (top >= firstScreenHeight - 60) {
             $('#fixed').fadeIn();
             $('#header-nav').addClass('nav-fixed');
+            // $('#header').css('height', '60px');
+            // $('#header').css('position', 'fixed');
         } else {
             $('#fixed').fadeOut();
             $('#header-nav').removeClass('nav-fixed');
@@ -149,4 +141,8 @@
 
     listenScroll();
     $('#root').on('scroll', listenScroll);
+    // To top button
+    $("#back-to-top").on('click', function () {
+        $('#root').animate({ scrollTop: 0 }, 600);
+    });
 })(jQuery);
