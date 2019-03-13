@@ -11,9 +11,6 @@ input, button
         border: 0
         padding: 0
 
-html, body, #container
-    height: 100%
-
 ::selection
     color: white
     background: color-sub
@@ -23,17 +20,26 @@ html, body, #container
     background: color-sub
     
 body
-    background: color-background
     font: font-size font-sans
     -webkit-text-size-adjust: 100%
-    font-weight: light;
+    font-weight: lighter;
+    background: url(color-header-background-img), url(/css/images/header-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative
+    width: 100%;
+    background-attachment: fixed;
 
 #root
     width: 100vw;
-    height: 100vh;
-    overflow: scroll;
+    overflow: auto;
     position: relative;
     
+#wrap
+    height: 100%;
+    overflow: auto;
+
 code
     margin: 0 2px
     color: color-sub
@@ -77,16 +83,13 @@ code
     background-repeat: no-repeat
     background-size: logo-width logo-height
 
-.main-body
-    margin-top: block-vertical-margin
-
 .main-body-inner
     clearfix()
     position: relative
     box-sizing: border-box
     max-width: container-inner-max-width
     margin: auto;
-    padding: 30px;
+    padding: 0 30px;
 
 #main
     width: 100%
@@ -141,7 +144,6 @@ code
 
 
 @import "_partial/header"
-@import "_partial/nav"
 @import "_partial/sidebar"
 @import "_partial/archive"
 @import "_partial/article"

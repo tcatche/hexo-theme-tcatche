@@ -1,29 +1,18 @@
 <%- partial('common/head') %>
 <body>
-  <div id="root">
-    <div id="page-percent">
-      <div></div>
-    </div>
-    <div id="wrap">
-      <%- partial('common/header', null, {cache: !config.relative_link}) %>
-      <div class="container">
-        <div class="bg_content">
-          <canvas id="canvas"></canvas>
+  <div id="page-percent"><div></div></div>
+  <%- partial('common/header', null, {cache: !config.relative_link}) %>
+  <div class="main-body container-inner">
+    <div class="main-body-inner">
+      <section id="main">
+        <div class="main-body-content">
+          <%- body %>
         </div>
-        <div class="main-body container-inner">
-          <div class="main-body-inner">
-            <section id="main">
-              <div class="main-body-content">
-                <%- body %>
-              </div>
-            </section>
-            <%//- partial('common/sidebar') %>
-          </div>
-        </div>
-      </div>
-      <%- partial('common/footer', null, {cache: !config.relative_link}) %>
+      </section>
+      <%//- partial('common/sidebar') %>
     </div>
   </div>
+  <%- partial('common/footer', null, {cache: !config.relative_link}) %>
   <%- partial('common/fixed') %>
   <%- partial('common/scripts') %>
 </body>

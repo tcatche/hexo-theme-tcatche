@@ -23,10 +23,7 @@
         <div class="article-entry" itemprop="articleBody">
             <%- post.content %>
         </div>
-        <footer class="article-footer">
-            <%- partial('share/index', { post: post }) %>
-        </footer>
-
+        <%- partial('post/footer') %>
     </div>
 </article>
 <%- partial('comment/index') %>

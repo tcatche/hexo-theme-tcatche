@@ -1,32 +1,29 @@
 #header
-    background: url(color-header-background-img)
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  height: 60px;
+
+.nav-container
+  clearfix()
+  width: 100%;
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05),
+                          0 -1px 0 rgba(0,0,0,0.2),
+                          inset 1px 0 0 rgba(0,0,0,0.2),
+                          inset -1px 0 0 rgba(0,0,0,0.2)
+  .main-nav-list-item
     position: relative
-    width: 100%;
-    height: 100vh;
-
-#header-outer
-    height: 100%
-    position: relative
-
-#header-title
-    clearfix()
-    text-align: center
-    padding: 520px 30px 0 30px
-    .logo-wrap, .subtitle-wrap
-        float: left
-    .subtitle-wrap
-        padding: 10px 0px 0px
-        margin-left: 20px
-    .subtitle
-        font-size: 16px
-        font-style: italic
-        line-height: logo-height + 10
-        color: color-nav-foreground
-        text-shadow: 0 1px rgba(0, 0, 0, 0.2)
-
-#header-inner, #header-title
-    .container-inner
-        padding: 0 container-padding
+    display: inline-block;
+    text-transform: uppercase
+    padding: 18px 14px
+    transition: 0.2s ease-in
+    cursor: pointer;
+    &:hover
+      background: color-nav-hover-background
+      color: color-theme
+      & > a
+        color: color-theme
+    .main-nav-list-link
+      text-shadow: 0 1px rgba(0, 0, 0, 0.4)
+      color: #fff
+      text-decoration: none
+      line-height: 24px
+      font-size: 18px

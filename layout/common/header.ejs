@@ -1,37 +1,19 @@
 <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div id="header-nav" class="nav-container">
-                <div class="container-inner nav-container-inner">
-                    <ul id="main-nav">
-                        <% for (var i in theme.menu) {
-                            if (i == 'Categories') { %>
-                                <%- list_categories({
-                                    depth: 2,
-                                    style: 'list',
-                                    class: 'main-nav',
-                                    show_count: false,
-                                }) %>
-                            <% } else { %>
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="<%- url_for(theme.menu[i]) %>"><%= __('index.' + i.toLowerCase()) %></a>
-                                </li>
-                        <% } %><% } %>
-                    </ul>
-                </div>
-            </div>
-            <div id="header-title" style="display: none">
-                <div class="container-inner">
-                    <h1 class="logo-wrap">
-                        <a href="<%- url_for() %>" class="logo"></a>
-                    </h1>
-                    <% if (theme.subtitle) { %>
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle"><%= theme.subtitle %></p>
-                        </h2>
-                    <% } %>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div id="header-nav" class="nav-container">
+    <ul>
+      <% for (var i in theme.menu) {
+        if (i == 'Categories') { %>
+          <%- list_categories({
+            depth: 2,
+            style: 'list',
+            class: 'main-nav',
+            show_count: false,
+          }) %>
+        <% } else { %>
+          <li class="main-nav-list-item" >
+            <a class="main-nav-list-link" href="<%- url_for(theme.menu[i]) %>"><%= __('index.' + i.toLowerCase()) %></a>
+          </li>
+      <% } %><% } %>
+    </ul>
+  </div>
 </header>

@@ -1,133 +1,216 @@
 // Insight Search Styles
-ins-container-width = 840px
+ins-container-width = 920px
 ins-text-grey = #9a9a9a
 ins-border-grey = #e2e2e2
-ins-background-grey = #f7f7f7
+ins-background = #fff
 ins-background-theme = color-theme
+ins-background-theme-hover = color-theme-opacity-6
+ins-image-width = 480px;
+ins-item-background = rgba(0,0,0,.3)
 
 $ins-full-screen
+  top: 0
+  left: 0
+  margin: 0
+  width: 100%
+  height: 100%
+
+.ins-search
+  display: none
+  &.show
+    display: block
+
+.ins-selectable
+  cursor: pointer
+
+.ins-search-mask,
+.ins-search-container
+  position: fixed
+
+.ins-search-mask
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 1000
+  background: rgba(0,0,0,0.6)
+
+.ins-image-wrapper
+  width: 100%;
+  height: 100%;
+  padding-bottom: 46px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  background: url(color-header-background-img);
+  background-size: cover;
+
+.ins-bookmark-wrapper
+  position: absolute;
+  float: left;
+  width: 300px;
+  height: calc(100% + 46px);
+  margin-left: 170px;
+  overflow: auto;
+  margin-right: 10px;
+  background: rgba(0,0,0,0.3);
+  @media screen and (max-width: 900px), screen and (max-height: 479px)
+    width: 30%;
+    margin-left: 20%;
+  .mark-list
+    margin: 0 5px;
+  ul
+    counter-reset: section;
+    list-style-type: none;
+  li
+    padding-left: 30px;
+    line-height: 1.2em;
+    margin: 5px 0;
+    &::before
+      counter-increment: section;
+      content: counters(section, ".");
+      color: #fff
+      display: inline-block;
+    &.mark-h2
+      font-size: 16px;
+      margin: 10px 0;
+      &::before
+        margin-left: -30px;
+        width: 15px;
+    &.mark-h3
+      font-size: 15px;
+      &::before
+        margin-left: -30px;
+        width: 25px;
+    &.mark-h4
+      font-size: 14px;
+      &::before
+        margin-left: -40px;
+        width: 40px;
+  a
+    color: #fff
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+
+.ins-input-wrapper
+  position: relative
+  margin-left: ins-image-width;
+  @media screen and (max-width: 900px), screen and (max-height: 479px)
+    margin-left: 50%;
+
+.ins-search-input
+  width: 100%
+  border: none
+  outline: none
+  font-size: 16px
+  box-shadow: none
+  font-weight: 200
+  border-radius: 0
+  background: white
+  line-height: 20px
+  box-sizing: border-box
+  padding: 12px 28px 12px 20px
+  border-bottom: 1px solid ins-border-grey
+  font-family: "Microsoft Yahei Light", "Microsoft Yahei", Helvetica, Arial, sans-serif
+
+.ins-search-container
+  left: 50%
+  top: 100px
+  z-index: 1001;
+  bottom: 100px
+  box-sizing: border-box
+  width: ins-container-width
+  margin-left: -(ins-container-width/2)
+  @media screen and (max-width: 980px), screen and (max-height: 479px)
     top: 0
     left: 0
     margin: 0
     width: 100%
     height: 100%
+    background: ins-background
 
-.ins-search
-    display: none
-    &.show
-        display: block
-
-.ins-selectable
-    cursor: pointer
-
-.ins-search-mask,
-.ins-search-container
-    position: fixed
-
-.ins-search-mask
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    z-index: 100
-    background: rgba(0,0,0,0.5)
-
-.ins-input-wrapper
-    position: relative
-
-.ins-search-input
-    width: 100%
-    border: none
-    outline: none
-    font-size: 16px
-    box-shadow: none
-    font-weight: 200
-    border-radius: 0
-    background: white
-    line-height: 20px
-    box-sizing: border-box
-    padding: 12px 28px 12px 20px
-    border-bottom: 1px solid ins-border-grey
-    font-family: "Microsoft Yahei Light", "Microsoft Yahei", Helvetica, Arial, sans-serif
-
-.ins-close
-    top: 50%
-    right: 6px
-    width: 20px
-    height: 20px
-    font-size: 16px
-    margin-top: -11px
-    position: absolute
-    text-align: center
-    display: inline-block
-    &:hover
-        color: ins-background-theme
-
-.ins-search-container
-    left: 50%
-    top: 100px
-    z-index: 101
-    bottom: 100px
-    box-sizing: border-box
-    width: ins-container-width
-    margin-left: -(ins-container-width/2)
-    @media screen and (max-width: 900px), screen and (max-height: 479px)
-        top: 0
-        left: 0
-        margin: 0
-        width: 100%
-        height: 100%
-        background: ins-background-grey
+.ins-search-close
+  font-size: 32px;
+  float: right;
+  top: 3px;
+  right: 5px;
+  position: absolute;
+  cursor: pointer;
+  line-height: 32px;
+  &:hover 
+    color: color-theme
 
 .ins-section-wrapper
-    left: 0
-    right: 0
-    top: 45px
-    bottom: 0
-    overflow-y: auto
-    position: absolute
-    background: ins-background-grey
+  overflow-y: auto;
+  height: 100%;
+  margin-left: ins-image-width;
+  position: relative;
+  background: rgba(0,0,0,0.3);
+  @media screen and (max-width: 900px), screen and (max-height: 479px)
+    margin-left: 50%;
 
 .ins-section-container
-    position: relative
+  position: relative
 
 .ins-section
-    font-size: 14px
-    line-height: 16px
-    .ins-section-header,
-    .ins-search-item
-        padding: 8px 15px
-    .ins-section-header
-        color: ins-text-grey
-        border-bottom: 1px solid ins-border-grey
-    .ins-slug
-        margin-left: 5px
-        color: ins-text-grey
-        &:before
-            content: '('
-        &:after
-            content: ')'
-    .ins-search-item
-        header,
-        .ins-search-preview
-            overflow: hidden
-            white-space: nowrap
-            text-overflow: ellipsis
-        header
-            .fa
-                margin-right: 8px
-        .ins-search-preview
-            height: 15px
-            font-size: 12px
-            color: ins-text-grey
-            margin: 5px 0 0 20px
-        &:hover,
-        &.active
-            color: white
-            background: ins-background-theme
-            .ins-slug,
-            .ins-search-preview
-                color: white
-    .ins-type-tag
-        display: inline-block;
-        min-width: 120px;;
+  font-size: 14px
+  line-height: 16px
+  .ins-section-header,
+  .ins-search-item
+    padding: 8px 15px
+  .ins-section-header
+    color: #fff;
+    margin-top: 20px;
+    font-size: 18px;
+  .ins-slug
+    margin-left: 5px
+    color: ins-text-grey
+    &:before
+      content: '('
+    &:after
+      content: ')'
+  .ins-search-item
+    header,
+    .ins-search-preview
+      overflow: hidden
+      white-space: nowrap
+      text-overflow: ellipsis
+    header
+      .fa
+        margin-right: 8px
+    .ins-search-preview
+      height: 15px
+      font-size: 12px
+      color: ins-text-grey
+      margin: 5px 0 0 20px
+    &:hover,
+    &.active
+      color: white
+      background: ins-background-theme-hover
+      .ins-slug,
+      .ins-search-preview
+        color: white
+  .ins-type-file
+    background: ins-item-background;
+    margin: 5px 2px;
+    color: #fff;
+    header
+      font-size: 16px;
+  .ins-type-folder
+    background: ins-item-background;
+    margin: 5px 2px;
+    color: #fff;
+  .ins-type-tag
+    display: inline-block;
+    background: ins-item-background;
+    margin: 2px;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px;
+  .ins-item-count
+    font-size: 12px;
+    color: #fff;
+    padding-left: 5px;

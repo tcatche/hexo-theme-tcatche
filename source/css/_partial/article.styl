@@ -74,7 +74,6 @@
                 border-right-color: color-sub
         .article-title
             font-size: 24px
-            font-weight: 400
             line-height: 1.5em
             word-wrap: no-wrap
             overflow: hidden
@@ -88,11 +87,11 @@
                 text-decoration: none
         .article-excerpt
             position: relative
-            color: rgb(170, 170, 170)
+            color: color-light
             font-size: 16px
             line-height: line-height
             overflow: hidden
-            margin: 0px 30px 20px
+            margin: 0px 30px
     &:hover
         .thumbnail
             background: #000;
@@ -104,11 +103,11 @@
                 color: color-theme
 
 .article-header
-    margin-top: article-padding;
+    margin-top: 30px;
     border-top: 1px solid color-border-light
     border-bottom: 1px solid color-border-light
     height: 80px;
-    padding: 20px 0
+    padding: 20px article-padding;
     .article-author-avatar
         float: left
         img
@@ -162,7 +161,8 @@
 
 
 .article-single
-    padding: 30px 30px 20px
+    padding: 30px 0 20px
+    background: #fff;
 
 .article-count
     float: left
@@ -191,7 +191,7 @@
     color: color-default
     line-height: line-height-title
     transition: color 0.2s
-    margin: 20px 0 0px;
+    margin: 20px article-padding 0px;
     a&:hover
         color: color-theme
 
@@ -209,18 +209,20 @@
     line-height: line-height
     & > *
         padding: 0 article-padding
+        line-height: 1.8em;
     p, table
         margin: line-height 0
     h1, h2, h3, h4, h5, h6
         line-height: line-height-title
-        margin: line-height-title 0
+        margin: line-height-title*1.5 0 line-height-title 
         border-left: 5px solid color-default
         font-weight: 400
         background: #fff
+        padding: 0 article-padding;
     a
         color: color-theme
+        text-decoration: none
         &:hover
-            font-weight: bold
             text-decoration: underline
     ul, ol, dl
         margin-top: line-height
@@ -236,7 +238,7 @@
         margin: auto
     img
         &:hover
-            transform: scale(1.2)
+            transform: scale(1.05)
         transition: transform 1s
     iframe
         border: none
@@ -257,12 +259,13 @@
         quote: none
         border-left: 4px solid color-theme
         background-color: color-quoteblock-background
-        padding: 10px 30px;
+        padding: 10px article-padding;
         p
             margin: 0;
     .highlight
         border-left: 4px solid color-theme
         background: rgba(20, 24, 32, .8)
+        padding: 15px (article-padding - 20px);
         pre
             counter-reset: code-line-num;
             .line::before
@@ -325,12 +328,26 @@
     color: color-default
     line-height: line-height
     border-top: 1px solid color-border
-    padding: line-height article-padding
+    margin: line-height article-padding
     a
-        color: color-grey
-        text-decoration: none
+        color: color-theme
         &:hover
-            color: color-default
+            text-decoration: none
+    .cc
+        margin: 20px 0 40px;
+        .cc-images
+            line-height: 36px;
+            height: 36px;
+            display: inline-block;
+            vertical-align: middle;
+        .cc-text
+            line-height: 36px;
+            vertical-align: middle;
+            display: inline-block;
+        img
+            width: 36px;
+            height: 36px;
+            margin-right: 12px;
 
 .article-comment-link,
 .article-share-link
